@@ -1,4 +1,4 @@
-@main 
+//@main 
 struct WhileLoop{
     static func main(){
         var n = 2
