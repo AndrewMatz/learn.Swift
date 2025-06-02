@@ -1,4 +1,4 @@
-@main
+//@main
 struct LoopIndex{
     static func main(){
         var total = 0
