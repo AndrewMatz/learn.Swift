@@ -1,4 +1,4 @@
-@main
+//@main
 struct BasicFunction{
     static func main(){
         print(greet(person: "Bob", lunchSpecial: "Tacos"))//day: "Tuesday"))
