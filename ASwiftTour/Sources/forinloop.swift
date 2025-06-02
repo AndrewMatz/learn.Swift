@@ -1,4 +1,4 @@
-@main
+//@main
 struct ForInLoop{
     static func main(){
         let interestingNumbers = [
