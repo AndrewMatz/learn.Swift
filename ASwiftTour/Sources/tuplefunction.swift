@@ -1,4 +1,4 @@
-@main
+//@main
 struct TulpleFunction {
     static func main(){
         let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
