@@ -1,4 +1,4 @@
-@main
+//@main
 struct nestedFunction{
     static func main(){
         func returnFifteen() -> Int {
