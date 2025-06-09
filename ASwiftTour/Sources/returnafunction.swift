@@ -1,4 +1,4 @@
-@main
+//@main
 struct ReturnAFunction{
     static func main(){
         //Function as a return value
