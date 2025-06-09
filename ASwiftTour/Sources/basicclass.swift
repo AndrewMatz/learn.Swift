@@ -9,6 +9,9 @@ struct classes{
         let mySquare = Square(lengthOfSides: 5.2, name: "square")
         print("Area: \(mySquare.area())")
         print("\(mySquare.simpleDescription())")
+
+        let myCircle = Circle(radius: 2, name: "circle")
+        print("\(myCircle.simpleDescription())")
     }
     class Shape {
         var numberOfSides = 0
@@ -38,6 +41,24 @@ struct classes{
 
         override func simpleDescription() -> String {
             return "A \(name) with sides of length \(lengthOfSides).";
+        }
+    }
+
+    class Circle: Shape{
+        var radius: Double
+
+        init(radius: Double, name: String){
+            self.radius = radius;
+            super.init(name: name)
+            numberOfSides = 0
+        }
+
+        func area() -> Double{
+            return 3.14159 * (radius * radius)
+        }
+        
+        override func simpleDescription() -> String {
+            return "A \(name) with radius \(radius) and area \(area())"
         }
     }
 }
