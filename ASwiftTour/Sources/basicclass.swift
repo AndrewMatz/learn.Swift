@@ -1,20 +1,21 @@
 @main
 struct classes{
     static func main(){
-        var shape = Shape()
+        var shape = Shape(name: "Heptagon")
         shape.numberOfSides = 7
         var shapeDescription = shape.simpleDescription()
         print(shapeDescription)
     }
     class Shape {
         var numberOfSides = 0
-        let text = "A shape with "
+        var name: String
+
+        init (name: String){
+            self.name = name;
+        }
 
         func simpleDescription() -> String {
-            return "\(text) \(numberOfSides) sides."
-        }
-        func simpleFunc(x: String){
-            print("This function does nothing")
+            return "A \(name) has \(numberOfSides) sides."
         }
     }
 }
