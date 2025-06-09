@@ -12,6 +12,9 @@ struct classes{
 
         let myCircle = Circle(radius: 2, name: "circle")
         print("\(myCircle.simpleDescription())")
+
+        let myTriangle = EquilateralTriangle(sideLength: 3.5, name: "equilateral triangle")
+        print("\(myTriangle.simpleDescription())")
     }
     class Shape {
         var numberOfSides = 0
@@ -59,6 +62,25 @@ struct classes{
         
         override func simpleDescription() -> String {
             return "A \(name) with radius \(radius) and area \(area())"
+        }
+    }
+
+    class EquilateralTriangle: Shape{
+        var sideLength: Double
+
+        init(sideLength: Double, name: String){
+            self.sideLength = sideLength
+            super.init(name: name)
+            numberOfSides = 3
+        }
+
+        var perimiter: Double {
+            get{return 3 * sideLength}
+            set{sideLength = newValue/3.0}
+        }
+
+        override func simpleDescription() -> String {
+            return "A \(name) with side length \(sideLength) and perimiter \(perimiter)."
         }
     }
 }
