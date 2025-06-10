@@ -83,4 +83,21 @@ struct classes{
             return "A \(name) with side length \(sideLength) and perimiter \(perimiter)."
         }
     }
+    
+    class TriangleAndSquare {
+        var triangle: EquilateralTriangle {
+            willSet {
+                square.sideLength = newValue.sideLength
+            }
+        }
+        var square: Square {
+            willSet {
+                triangle.sideLength = newValue.sideLength
+            }
+        }
+        init(size: Double, name: String) {
+            square = Square(sideLength: size, name: name)
+            triangle = EquilateralTriangle(sideLength: size, name: name)
+        }
+    }    
 }
