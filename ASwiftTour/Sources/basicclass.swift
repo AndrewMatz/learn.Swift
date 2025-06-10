@@ -1,4 +1,4 @@
-@main
+//@main
 struct classes{
     static func main(){
         var shape = Shape(name: "Heptagon")
