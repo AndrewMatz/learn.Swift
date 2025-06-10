@@ -15,6 +15,15 @@ struct classes{
 
         let myTriangle = EquilateralTriangle(sideLength: 3.5, name: "equilateral triangle")
         print("\(myTriangle.simpleDescription())")
+
+        var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
+        print(triangleAndSquare.square.lengthOfSides)
+        // Prints "10.0"
+        print(triangleAndSquare.triangle.sideLength)
+        // Prints "10.0"
+        triangleAndSquare.square = Square(lengthOfSides: 50, name: "larger square")
+        print(triangleAndSquare.triangle.sideLength)
+        // Prints "50.0"
     }
     class Shape {
         var numberOfSides = 0
@@ -83,20 +92,20 @@ struct classes{
             return "A \(name) with side length \(sideLength) and perimiter \(perimiter)."
         }
     }
-    
+
     class TriangleAndSquare {
         var triangle: EquilateralTriangle {
             willSet {
-                square.sideLength = newValue.sideLength
+                square.lengthOfSides = newValue.sideLength
             }
         }
         var square: Square {
             willSet {
-                triangle.sideLength = newValue.sideLength
+                triangle.sideLength = newValue.lengthOfSides
             }
         }
         init(size: Double, name: String) {
-            square = Square(sideLength: size, name: name)
+            square = Square(lengthOfSides: size, name: name)
             triangle = EquilateralTriangle(sideLength: size, name: name)
         }
     }    
